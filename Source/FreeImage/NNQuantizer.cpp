@@ -272,7 +272,7 @@ int NNQuantizer::contest(int b, int g, int r) {
 		*f++ -= betafreq;
 		*p++ += (betafreq << gammashift);
 	}
-	freq[bestpos] += beta;
+	freq[bestpos] += beta1;
 	bias[bestpos] -= betagamma;
 	return bestbiaspos;
 }
