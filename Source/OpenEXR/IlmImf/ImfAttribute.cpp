@@ -63,8 +63,12 @@ Attribute::~Attribute () {}
 
 namespace {
 
-struct NameCompare: std::binary_function <const char *, const char *, bool>
+struct NameCompare
 {
+	typedef const char * first_argument_type;
+	typedef const char * second_argument_type;
+	typedef bool result_type;
+
     bool
     operator () (const char *x, const char *y) const
     {
