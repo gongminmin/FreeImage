@@ -111,7 +111,7 @@ static const int gammashift = 10;
 // static const int gamma = (((int)1) << gammashift);
 /// beta = 1 / 1024
 static const int betashift = 10;
-static const int beta = (intbias >> betashift);
+static const int beta1 = (intbias >> betashift);
 static const int betagamma = (intbias << (gammashift-betashift));
 //@}
 
