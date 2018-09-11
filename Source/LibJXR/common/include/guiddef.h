@@ -53,6 +53,12 @@ typedef struct _GUID {
 #endif
 #endif
 
+#if defined(__MINGW32__) && defined(__cplusplus) && (USE___UUIDOF == 0)
+extern "C++" {
+__extension__ template<typename T> const GUID &__mingw_uuidof();
+}
+#endif
+
 #ifndef FAR
 #if defined(_WIN32) || defined(__ANSI__)
 #define FAR
@@ -62,7 +68,7 @@ typedef struct _GUID {
 #endif
 
 #ifndef DECLSPEC_SELECTANY
-#if (_MSC_VER >= 1100)
+#if (_MSC_VER >= 1100) || defined(__MINGW32__)
 #define DECLSPEC_SELECTANY  __declspec(selectany)
 #else
 #define DECLSPEC_SELECTANY

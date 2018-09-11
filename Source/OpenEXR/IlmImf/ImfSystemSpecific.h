@@ -63,7 +63,11 @@ static bool GLOBAL_SYSTEM_LITTLE_ENDIAN =
 static void* EXRAllocAligned(size_t size, size_t alignment)
 {
     void* ptr = 0;
+#ifdef _WIN32
+    ptr = _mm_malloc(size, alignment);
+#else
     posix_memalign(&ptr, alignment, size);
+#endif
     return ptr;
 }
 
