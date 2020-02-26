@@ -29,12 +29,12 @@
 #pragma warning (disable : 4786) // identifier was truncated to 'number' characters
 #endif
 
-#include "../LibTIFF4/tiffiop.h"
-
 #include "FreeImage.h"
 #include "Utilities.h"
 #include "FreeImageTag.h"
 #include "FIRational.h"
+
+#include "../LibTIFF4/tiffiop.h"
 
 // ----------------------------------------------------------
 //   Extended TIFF Directory GEO Tag Support
